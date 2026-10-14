@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="About · demo-web hub">
+  <section class="hero">
+    <h1>How this hub works</h1>
+    <p>Every site publishes a small <code>site.json</code>. At build time the hub fetches them and renders the cards. Each site's deploy workflow can trigger a hub rebuild through a <code>repository_dispatch</code> event.</p>
+  </section>
+  <section style="padding-bottom:56px">
+    <h2>Add a new site</h2>
+    <ol>
+      <li>Create the repo with its own framework, set its base path to <code>/&lt;repo&gt;/</code>.</li>
+      <li>Publish <code>site.json</code> and <code>thumbnail.svg</code> at the root of its built output.</li>
+      <li>Add an entry to <code>src/data/sites.json</code> here.</li>
+      <li>Optionally add the dispatch step so this hub rebuilds when the site deploys.</li>
+    </ol>
+  </section>
+</Base>

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "demo-web-notebooks",
+    "url": "https://sthudir.github.io/demo-web-notebooks/",
+    "title": "Sourdough Lab",
+    "blurb": "Hydration and fermentation math as editable Python that runs in your browser.",
+    "framework": "Jupyter Book 2 + JupyterLite",
+    "tags": ["python", "notebooks"],
+    "thumbnail": "thumbnail.svg"
+  },
+  {
+    "id": "demo-web-sim",
+    "url": "https://sthudir.github.io/demo-web-sim/",
+    "title": "Pocket Tides",
+    "blurb": "Moon and sun sliders drive a live 3D tide model.",
+    "framework": "Vite + React + Three.js",
+    "tags": ["simulation", "3d"],
+    "thumbnail": "thumbnail.svg"
+  },
+  {
+    "id": "demo-web-reference",
+    "url": "https://sthudir.github.io/demo-web-reference/",
+    "title": "Coffee Atlas",
+    "blurb": "A structured reference of origins and brew methods.",
+    "framework": "Sphinx + Furo",
+    "tags": ["reference", "docs"],
+    "thumbnail": "thumbnail.svg"
+  }
+]

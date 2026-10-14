@@ -1,0 +1,15 @@
+---
+import Base from '../../layouts/Base.astro';
+import { loadSites } from '../../data/load-sites';
+
+export async function getStaticPaths() {
+  const sites = await loadSites();
+  return sites.map((site) => ({ params: { id: site.id }, props: { site } }));
+}
+const { site } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+<Base title={`${site.title} · preview`}>
+  <p style="margin:16px 0"><a href={base}>&larr; All sites</a> · <a href={site.url}>Open in full tab</a></p>
+  <iframe src={site.url} title={site.title} loading="lazy" style="width:100%;height:78vh;border:1px solid var(--dw-border);border-radius:var(--dw-radius);background:#fff;margin-bottom:40px"></iframe>
+</Base>

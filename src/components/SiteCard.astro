@@ -1,0 +1,30 @@
+---
+import type { Site } from '../data/load-sites';
+interface Props { site: Site; previewHref: string }
+const { site, previewHref } = Astro.props;
+---
+<article class="card">
+  <img src={site.thumbnail} alt="" loading="lazy" width="320" height="200" />
+  <div class="body">
+    <p class="fw">{site.framework}{site.live ? '' : ' · offline snapshot'}</p>
+    <h2>{site.title}</h2>
+    <p class="blurb">{site.blurb}</p>
+    <p class="tags">{site.tags.map((t) => <span>{t}</span>)}</p>
+    <p class="actions">
+      <a class="btn" href={site.url}>Open site</a>
+      <a href={previewHref}>Live preview</a>
+    </p>
+  </div>
+</article>
+<style>
+  .card { background: var(--dw-card); border: 1px solid var(--dw-border); border-radius: var(--dw-radius); overflow: hidden; display: flex; flex-direction: column; }
+  img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; background: var(--dw-border); display: block; }
+  .body { padding: 14px 16px 16px; }
+  .fw { margin: 0; font-size: 0.8rem; color: var(--dw-muted); text-transform: uppercase; letter-spacing: 0.04em; }
+  h2 { margin: 4px 0 6px; font-size: 1.25rem; }
+  .blurb { margin: 0 0 10px; color: var(--dw-muted); }
+  .tags { margin: 0 0 12px; display: flex; gap: 6px; flex-wrap: wrap; }
+  .tags span { font-size: 0.75rem; border: 1px solid var(--dw-border); border-radius: 999px; padding: 1px 8px; color: var(--dw-muted); }
+  .actions { margin: 0; display: flex; gap: 16px; align-items: center; }
+  .btn { background: var(--dw-accent); color: #0b0f14; padding: 6px 14px; border-radius: 8px; text-decoration: none; font-weight: 600; }
+</style>
