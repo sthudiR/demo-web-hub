@@ -5,7 +5,10 @@
     "title": "Sourdough Lab",
     "blurb": "Hydration and fermentation math as editable Python that runs in your browser.",
     "framework": "Jupyter Book 2 + JupyterLite",
-    "tags": ["python", "notebooks"],
+    "tags": [
+      "python",
+      "notebooks"
+    ],
     "thumbnail": "thumbnail.svg"
   },
   {
@@ -14,7 +17,10 @@
     "title": "Pocket Tides",
     "blurb": "Moon and sun sliders drive a live 3D tide model.",
     "framework": "Vite + React + Three.js",
-    "tags": ["simulation", "3d"],
+    "tags": [
+      "simulation",
+      "3d"
+    ],
     "thumbnail": "thumbnail.svg"
   },
   {
@@ -23,7 +29,46 @@
     "title": "Coffee Atlas",
     "blurb": "A structured reference of origins and brew methods.",
     "framework": "Sphinx + Furo",
-    "tags": ["reference", "docs"],
+    "tags": [
+      "reference",
+      "docs"
+    ],
+    "thumbnail": "thumbnail.svg"
+  },
+  {
+    "id": "demo-web-quarto",
+    "url": "https://sthudir.github.io/demo-web-quarto/",
+    "title": "Window Garden",
+    "blurb": "A short guide to what grows on a sill, with live slider-driven charts.",
+    "framework": "Quarto",
+    "tags": [
+      "quarto",
+      "lessons"
+    ],
+    "thumbnail": "thumbnail.svg"
+  },
+  {
+    "id": "demo-web-marimo",
+    "url": "https://sthudir.github.io/demo-web-marimo/",
+    "title": "Lemonade Lab",
+    "blurb": "Mix a pitcher with sliders; reactive Python running in your browser.",
+    "framework": "marimo (WebAssembly)",
+    "tags": [
+      "python",
+      "wasm"
+    ],
+    "thumbnail": "thumbnail.svg"
+  },
+  {
+    "id": "demo-web-p5",
+    "url": "https://sthudir.github.io/demo-web-p5/",
+    "title": "Starling Sky",
+    "blurb": "A flock of birds you can tune and scare. Plain JavaScript animation.",
+    "framework": "p5.js",
+    "tags": [
+      "javascript",
+      "animation"
+    ],
     "thumbnail": "thumbnail.svg"
   }
 ]
