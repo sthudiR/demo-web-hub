@@ -3,7 +3,6 @@ import Base from '../layouts/Base.astro';
 import SiteCard from '../components/SiteCard.astro';
 import { loadSites } from '../data/load-sites';
 const sites = await loadSites();
-const base = import.meta.env.BASE_URL;
 ---
 <Base title="demo-web hub">
   <section class="hero">
@@ -11,6 +10,6 @@ const base = import.meta.env.BASE_URL;
     <p>Each card is a separate repo with its own stack, built and hosted on GitHub Pages. This hub reads each site's <code>site.json</code> at build time.</p>
   </section>
   <section class="grid">
-    {sites.map((s) => <SiteCard site={s} previewHref={`${base}preview/${s.id}/`} />)}
+    {sites.map((s) => <SiteCard site={s} />)}
   </section>
 </Base>

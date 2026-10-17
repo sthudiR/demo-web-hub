@@ -4,7 +4,7 @@ Main page of the demo-web family. Built with Astro (static output) and hosted on
 
 ## How it works
 - `src/data/sites.json` lists the sites. At build time `src/data/load-sites.ts` fetches each site's `site.json` and falls back to the registry entry if the site is unreachable.
-- Each site gets a card and an iframe preview page (`/preview/<id>/`). All sites share the `sthudir.github.io` origin.
+- Each site gets a card linking to it. All sites share the `sthudir.github.io` origin.
 - The deploy workflow also runs on `repository_dispatch` (`site-updated`) and weekly.
 
 ## Develop
