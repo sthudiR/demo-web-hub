@@ -5,10 +5,10 @@ import { loadSites } from '../data/load-sites';
 const sites = await loadSites();
 const base = import.meta.env.BASE_URL;
 ---
-<Base title="Small Labs">
+<Base title="demo-web hub">
   <section class="hero">
-    <h1>Three small labs, ready to play with.</h1>
-    <p>Bake a better loaf with live Python, push the moon around a tide simulator, or look up where your coffee comes from. Pick one and dive in.</p>
+    <h1>One front door, three different frameworks.</h1>
+    <p>Each card is a separate repo with its own stack, built and hosted on GitHub Pages. This hub reads each site's <code>site.json</code> at build time.</p>
   </section>
   <section class="grid">
     {sites.map((s) => <SiteCard site={s} previewHref={`${base}preview/${s.id}/`} />)}
