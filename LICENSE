@@ -1,0 +1,10 @@
+CC0 1.0 Universal (Public Domain Dedication)
+
+This is a demo project and everything in it is made up. The author has
+dedicated it to the public domain: anyone may copy, modify, use, and share it
+for any purpose, without asking and without credit.
+
+Full legal text: https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+Note: third-party libraries in vendor/ folders (for example p5.js and three.js)
+keep their own licences, which are included alongside them.

@@ -21,3 +21,6 @@ npm run build   # output in dist/
 
 ## Base path
 `astro.config.mjs` sets `base: '/demo-web-hub'`. Change it if the repo is renamed or a custom domain is used.
+
+## Licence
+Public domain (CC0). Everything here is made up for a demo; use and share it freely. See `LICENSE`.
