@@ -1,8 +1,14 @@
 ---
 import '../styles/global.css';
 interface Props { title: string; description?: string }
-const { title, description = 'Demo hub for the demo-web family of sites.' } = Astro.props;
+const { title, description = 'Six ways to publish interactive pages on GitHub Pages, side by side.' } = Astro.props;
 const base = import.meta.env.BASE_URL;
+const path = Astro.url.pathname;
+const links = [
+  { href: base, label: 'All demos' },
+  { href: `${base}which/`, label: 'What can I use for…?' },
+  { href: `${base}about/`, label: 'About this project' },
+];
 ---
 <!doctype html>
 <html lang="en">
@@ -10,19 +16,22 @@ const base = import.meta.env.BASE_URL;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://sthudir.github.io/demo-web-hub/social.png" />
+    <meta name="twitter:card" content="summary_large_image" />
     <title>{title}</title>
   </head>
   <body>
     <header class="site">
       <div class="wrap">
         <a class="brand" href={base}>Small Labs</a>
-        <nav>
-          <a href={base}>Sites</a>
-          <a href={`${base}about/`}>About</a>
+        <nav aria-label="Main">
+          {links.map((l) => <a href={l.href} class={path === l.href ? 'current' : ''} aria-current={path === l.href ? 'page' : undefined}>{l.label}</a>)}
         </nav>
       </div>
     </header>
     <main class="wrap"><slot /></main>
-    <footer><div class="wrap">Built with Astro. Each site below is its own repo and framework.</div></footer>
+    <footer><div class="wrap">Built with Astro. Each demo is its own repo and tool, hosted on GitHub Pages.</div></footer>
   </body>
 </html>

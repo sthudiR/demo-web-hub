@@ -3,13 +3,23 @@ import Base from '../layouts/Base.astro';
 import SiteCard from '../components/SiteCard.astro';
 import { loadSites } from '../data/load-sites';
 const sites = await loadSites();
+const sitesList = sites.filter((s) => s.kind === 'site');
+const pieces = sites.filter((s) => s.kind === 'piece');
+const base = import.meta.env.BASE_URL;
 ---
-<Base title="demo-web hub">
+<Base title="Six ways to publish on GitHub Pages · Small Labs">
   <section class="hero">
-    <h1>One front door, six different frameworks.</h1>
-    <p>Each card is a separate repo with its own stack, built and hosted on GitHub Pages. This hub reads each site's <code>site.json</code> at build time.</p>
+    <h1>Six ways to publish on GitHub Pages.</h1>
+    <p>Same free host, six different tools. Hover a card to see it move, then open it. Not sure what fits? <a href={`${base}which/`}>See what you can use for what</a>.</p>
   </section>
-  <section class="grid">
-    {sites.map((s) => <SiteCard site={s} />)}
+  <section class="group" aria-labelledby="g-site">
+    <h2 id="g-site">Tools that build a site</h2>
+    <p class="gdesc">Pages, navigation and search from files you write. Start here for lessons, books and docs.</p>
+    <div class="grid">{sitesList.map((s) => <SiteCard site={s} />)}</div>
+  </section>
+  <section class="group" aria-labelledby="g-piece">
+    <h2 id="g-piece">Tools that make an interactive piece</h2>
+    <p class="gdesc">One interactive thing, such as a simulation or an animation. Drop it into a page or publish it alone.</p>
+    <div class="grid">{pieces.map((s) => <SiteCard site={s} />)}</div>
   </section>
 </Base>

@@ -9,7 +9,16 @@
       "python",
       "notebooks"
     ],
-    "thumbnail": "thumbnail.svg"
+    "thumbnail": "thumbnail.svg",
+    "kind": "site",
+    "metrics": {
+      "size": "84 MB",
+      "ready": "0.4 s",
+      "writes": "Markdown + Python"
+    },
+    "goodFor": "Books with code readers can edit and run in the browser.",
+    "notFor": "Small, fast sites: the Python lab is 84 MB.",
+    "preview": "preview"
   },
   {
     "id": "demo-web-sim",
@@ -21,7 +30,16 @@
       "simulation",
       "3d"
     ],
-    "thumbnail": "thumbnail.svg"
+    "thumbnail": "thumbnail.svg",
+    "kind": "piece",
+    "metrics": {
+      "size": "2.4 MB",
+      "ready": "0.6 s",
+      "writes": "TypeScript"
+    },
+    "goodFor": "Real-time 3D you can steer with sliders.",
+    "notFor": "Quick lessons: it is the most code of the six.",
+    "preview": "preview"
   },
   {
     "id": "demo-web-reference",
@@ -33,7 +51,16 @@
       "reference",
       "docs"
     ],
-    "thumbnail": "thumbnail.svg"
+    "thumbnail": "thumbnail.svg",
+    "kind": "site",
+    "metrics": {
+      "size": "0.7 MB",
+      "ready": "0.5 s",
+      "writes": "Markdown"
+    },
+    "goodFor": "Reference docs and API lookup, including C++ and ROS.",
+    "notFor": "Interactive demos.",
+    "preview": "preview"
   },
   {
     "id": "demo-web-quarto",
@@ -45,7 +72,16 @@
       "quarto",
       "lessons"
     ],
-    "thumbnail": "thumbnail.svg"
+    "thumbnail": "thumbnail.svg",
+    "kind": "site",
+    "metrics": {
+      "size": "2.7 MB",
+      "ready": "1 s",
+      "writes": "Markdown"
+    },
+    "goodFor": "Lessons and courses written in plain text, with charts that react.",
+    "notFor": "Heavy custom apps; interactivity comes from embedded code or other tools.",
+    "preview": "preview"
   },
   {
     "id": "demo-web-marimo",
@@ -57,7 +93,16 @@
       "python",
       "wasm"
     ],
-    "thumbnail": "thumbnail.svg"
+    "thumbnail": "thumbnail.svg",
+    "kind": "piece",
+    "metrics": {
+      "size": "27 MB",
+      "ready": "6 s",
+      "writes": "Python"
+    },
+    "goodFor": "Python simulations with sliders, no server needed.",
+    "notFor": "Fast first loads or multi-page sites.",
+    "preview": "preview"
   },
   {
     "id": "demo-web-p5",
@@ -69,6 +114,15 @@
       "javascript",
       "animation"
     ],
-    "thumbnail": "thumbnail.svg"
+    "thumbnail": "thumbnail.svg",
+    "kind": "piece",
+    "metrics": {
+      "size": "1.1 MB",
+      "ready": "1 s",
+      "writes": "JavaScript"
+    },
+    "goodFor": "Animations and visuals you can drag and tweak, with no build step.",
+    "notFor": "Page structure: p5 draws, so you build the pages around it.",
+    "preview": "preview"
   }
 ]
