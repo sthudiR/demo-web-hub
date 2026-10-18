@@ -28,10 +28,25 @@ a { color: var(--dw-accent); }
 header.site { border-bottom: 1px solid var(--dw-border); }
 header.site .wrap { display: flex; gap: 20px; align-items: center; padding-block: 14px; flex-wrap: wrap; }
 header.site .brand { font-weight: 700; color: var(--dw-fg); text-decoration: none; margin-right: auto; }
-header.site nav a { color: var(--dw-muted); text-decoration: none; font-size: 0.95rem; }
-header.site nav a:hover { color: var(--dw-fg); }
+header.site nav { display: flex; gap: 6px; flex-wrap: wrap; }
+header.site nav a { color: var(--dw-muted); text-decoration: none; font-size: 0.95rem; padding: 5px 12px; border-radius: 999px; border: 1px solid transparent; }
+header.site nav a:hover { color: var(--dw-fg); border-color: var(--dw-border); }
+header.site nav a.current { color: var(--dw-fg); background: var(--dw-card); border-color: var(--dw-border); font-weight: 600; }
 .hero { padding: 56px 0 24px; }
 .hero h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 0 0 8px; line-height: 1.15; }
 .hero p { color: var(--dw-muted); max-width: 60ch; margin: 0; }
-.grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); padding-block: 24px 56px; }
+.group { padding-top: 28px; }
+.group h2 { margin: 0 0 4px; font-size: 1.35rem; }
+.gdesc { margin: 0; color: var(--dw-muted); }
+.grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); padding-block: 16px 28px; }
+.which { width: 100%; border-collapse: collapse; margin: 16px 0 40px; }
+.which th, .which td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--dw-border); vertical-align: top; }
+.which th { color: var(--dw-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.which td.goal { font-weight: 600; }
+.which .watch { color: var(--dw-muted); font-size: 0.92rem; }
+@media (max-width: 720px) {
+  .which thead { display: none; }
+  .which tr { display: block; padding: 10px 0; border-bottom: 1px solid var(--dw-border); }
+  .which td { display: block; border: 0; padding: 2px 0; }
+}
 footer { border-top: 1px solid var(--dw-border); color: var(--dw-muted); font-size: 0.9rem; padding-block: 20px; }

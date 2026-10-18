@@ -1,15 +1,29 @@
 ---
 import type { Site } from '../data/load-sites';
+import { KIND_LABEL } from '../data/load-sites';
 interface Props { site: Site }
 const { site } = Astro.props;
+const m = site.metrics;
 ---
-<article class="card">
-  <img src={site.thumbnail} alt="" loading="lazy" width="320" height="200" />
+<article class="card" data-card>
+  <a class="thumb" href={site.url} tabindex="-1" aria-hidden="true">
+    <img src={site.thumbnail} alt="" loading="lazy" width="320" height="200" />
+    <video muted loop playsinline preload="none" aria-hidden="true" tabindex="-1">
+      <source src={site.previews.webm} type="video/webm" />
+      <source src={site.previews.mp4} type="video/mp4" />
+    </video>
+    <span class={`kind ${site.kind}`}>{KIND_LABEL[site.kind]}</span>
+    <span class="play" aria-hidden="true">&#9654; Preview</span>
+  </a>
   <div class="body">
     <p class="fw">{site.framework}{site.live ? '' : ' · offline snapshot'}</p>
-    <h2>{site.title}</h2>
+    <h3>{site.title}</h3>
     <p class="blurb">{site.blurb}</p>
-    <p class="tags">{site.tags.map((t) => <span>{t}</span>)}</p>
+    <ul class="chips" aria-label="Key numbers">
+      <li><b>{m.size}</b> published</li>
+      <li>ready in <b>{m.ready}</b></li>
+      <li>you write <b>{m.writes}</b></li>
+    </ul>
     <p class="actions">
       <a class="btn" href={site.url}>Open site</a>
     </p>
@@ -17,13 +31,53 @@ const { site } = Astro.props;
 </article>
 <style>
   .card { background: var(--dw-card); border: 1px solid var(--dw-border); border-radius: var(--dw-radius); overflow: hidden; display: flex; flex-direction: column; }
-  img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; background: var(--dw-border); display: block; }
+  .thumb { position: relative; display: block; aspect-ratio: 16 / 10; background: var(--dw-border); }
+  .thumb img, .thumb video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+  .thumb video { opacity: 0; transition: opacity 0.2s; }
+  .card.playing .thumb video { opacity: 1; }
+  .kind { position: absolute; top: 8px; left: 8px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.03em; padding: 2px 9px; border-radius: 999px; background: rgba(15, 20, 25, 0.85); color: #e6edf3; border: 1px solid rgba(230, 237, 243, 0.35); }
+  .kind.site { border-color: #4fb286; }
+  .kind.piece { border-color: #e0a458; }
+  .play { position: absolute; right: 8px; bottom: 8px; font-size: 0.72rem; padding: 2px 9px; border-radius: 999px; background: rgba(15, 20, 25, 0.8); color: #e6edf3; transition: opacity 0.2s; }
+  .card.playing .play { opacity: 0; }
   .body { padding: 14px 16px 16px; flex: 1; display: flex; flex-direction: column; }
   .fw { margin: 0; font-size: 0.8rem; color: var(--dw-muted); text-transform: uppercase; letter-spacing: 0.04em; }
-  h2 { margin: 4px 0 6px; font-size: 1.25rem; }
+  h3 { margin: 4px 0 6px; font-size: 1.25rem; }
   .blurb { margin: 0 0 10px; color: var(--dw-muted); }
-  .tags { margin: 0 0 16px; display: flex; gap: 6px; flex-wrap: wrap; }
-  .tags span { font-size: 0.75rem; border: 1px solid var(--dw-border); border-radius: 999px; padding: 1px 8px; color: var(--dw-muted); }
+  .chips { list-style: none; margin: 0 0 16px; padding: 0; display: flex; gap: 6px; flex-wrap: wrap; }
+  .chips li { font-size: 0.75rem; border: 1px solid var(--dw-border); border-radius: 999px; padding: 1px 9px; color: var(--dw-muted); }
+  .chips b { color: var(--dw-fg); font-weight: 600; }
   .actions { margin: auto 0 0; display: flex; gap: 16px; align-items: center; }
   .btn { flex: 1; text-align: center; background: var(--dw-accent); color: #0b0f14; padding: 8px 14px; border-radius: 8px; text-decoration: none; font-weight: 600; }
 </style>
+<script>
+  // Play the preview clip on hover/focus (mouse and keyboard) and while on screen for touch devices.
+  // Does nothing when the visitor prefers reduced motion; the static thumbnail stays.
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const touch = matchMedia('(hover: none)').matches;
+    const start = (card: HTMLElement) => {
+      const v = card.querySelector('video');
+      if (!v) return;
+      v.play().then(() => card.classList.add('playing')).catch(() => {});
+    };
+    const stop = (card: HTMLElement) => {
+      const v = card.querySelector('video');
+      card.classList.remove('playing');
+      if (v) { v.pause(); v.currentTime = 0; }
+    };
+    const cards = document.querySelectorAll<HTMLElement>('[data-card]');
+    if (touch && 'IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        for (const e of entries) (e.isIntersecting ? start : stop)(e.target as HTMLElement);
+      }, { threshold: 0.7 });
+      cards.forEach((c) => io.observe(c));
+    } else {
+      cards.forEach((c) => {
+        c.addEventListener('mouseenter', () => start(c));
+        c.addEventListener('mouseleave', () => stop(c));
+        c.addEventListener('focusin', () => start(c));
+        c.addEventListener('focusout', () => stop(c));
+      });
+    }
+  }
+</script>
