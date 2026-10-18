@@ -58,7 +58,7 @@
       "ready": "0.5 s",
       "writes": "Markdown"
     },
-    "goodFor": "Reference docs and API lookup, including C++.",
+    "goodFor": "Reference docs and API lookup, for Python, C++ and other languages.",
     "notFor": "Interactive demos.",
     "preview": "preview"
   },
