@@ -58,7 +58,7 @@
       "ready": "0.5 s",
       "writes": "Markdown"
     },
-    "goodFor": "Reference docs and API lookup, including C++ and ROS.",
+    "goodFor": "Reference docs and API lookup, including C++.",
     "notFor": "Interactive demos.",
     "preview": "preview"
   },
