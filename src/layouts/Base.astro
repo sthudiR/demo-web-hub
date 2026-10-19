@@ -6,7 +6,7 @@ const base = import.meta.env.BASE_URL;
 const path = Astro.url.pathname;
 const links = [
   { href: base, label: 'All demos' },
-  { href: `${base}which/`, label: 'What can I use for…?' },
+  { href: `${base}which/`, label: 'Pick your tool' },
   { href: `${base}about/`, label: 'About this project' },
 ];
 ---
@@ -21,6 +21,8 @@ const links = [
     <meta property="og:image" content="https://sthudir.github.io/demo-web-hub/social.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <title>{title}</title>
+    <script data-goatcounter="https://demo-web.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
   </head>
   <body>
     <header class="site">
