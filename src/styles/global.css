@@ -31,6 +31,7 @@ header.site .brand { font-weight: 700; color: var(--dw-fg); text-decoration: non
 header.site nav { display: flex; gap: 6px; flex-wrap: wrap; }
 header.site nav a { color: var(--dw-muted); text-decoration: none; font-size: 0.95rem; padding: 5px 12px; border-radius: 999px; border: 1px solid transparent; }
 header.site nav a:hover { color: var(--dw-fg); border-color: var(--dw-border); }
+header.site .gh-link { color: var(--dw-fg); display: inline-flex; }
 header.site nav a.current { color: var(--dw-fg); background: var(--dw-card); border-color: var(--dw-border); font-weight: 600; }
 .hero { padding: 56px 0 24px; }
 .hero h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 0 0 8px; line-height: 1.15; }
