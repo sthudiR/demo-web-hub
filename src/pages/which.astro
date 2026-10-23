@@ -4,11 +4,11 @@ import registry from '../data/sites.json';
 const url = (id: string) => registry.find((s) => s.id === id)!.url;
 const rows = [
   { goal: 'Write lessons or a course', tool: 'Quarto', id: 'demo-web-quarto', demo: 'Window Garden', watch: 'Interactivity comes from embedded code or other tools.' },
-  { goal: 'Run Python with sliders in the browser', tool: 'marimo (WebAssembly)', id: 'demo-web-marimo', demo: 'Lemonade Lab', watch: 'The first visit downloads Python, about 5 seconds. One page per notebook.' },
+  { goal: 'Run Python with sliders in the browser', tool: 'marimo (WebAssembly)', id: 'demo-web-marimo', demo: 'Lemonade Lab', watch: 'The first visit downloads Python, about 6 seconds. One page per notebook.' },
   { goal: 'Make an animation or visual', tool: 'p5.js', id: 'demo-web-p5', demo: 'Starling Sky', watch: 'It draws and nothing more, so you build the pages around it.' },
   { goal: 'Show a 3D model people can move', tool: 'Vite + React + Three.js', id: 'demo-web-sim', demo: 'Pocket Tides', watch: 'The most code of the six. Worth it only for real-time 3D.' },
   { goal: 'Publish docs and a code reference', tool: 'Sphinx + Furo', id: 'demo-web-reference', demo: 'Coffee Atlas', watch: 'More setup than Markdown-only tools; shines for Python, C++ and other API docs.' },
-  { goal: 'Give people code to edit and run', tool: 'Jupyter Book + JupyterLite', id: 'demo-web-notebooks', demo: 'Sourdough Lab', watch: 'Heavy: the published site is 84 MB.' },
+  { goal: 'Give people code to edit and run', tool: 'Jupyter Book + JupyterLite', id: 'demo-web-notebooks', demo: 'Sourdough Lab', watch: 'Heavy: the published site is 82 MB.' },
   { goal: 'Tie it all together', tool: 'Astro + GitHub Pages + Actions', id: 'demo-web-hub', demo: 'This hub', watch: 'Pages hosts static files only.' },
 ];
 const hub = 'https://sthudir.github.io/demo-web-hub/';

@@ -1,0 +1,14 @@
+{
+  "name": "demo-web-measure",
+  "private": true,
+  "type": "module",
+  "description": "Measures the numbers shown in each demo site's 'Behind this page' panel and on the hub cards.",
+  "scripts": {
+    "measure": "node measure.mjs",
+    "apply": "node apply.mjs",
+    "apply:dry": "node apply.mjs --dry-run"
+  },
+  "dependencies": {
+    "playwright": "1.64.1"
+  }
+}

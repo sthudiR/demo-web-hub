@@ -1,0 +1,66 @@
+{
+  "owner": "sthudiR",
+  "pagesOrigin": "https://sthudir.github.io",
+  "workflow": "deploy.yml",
+  "buildJob": "build",
+  "sites": [
+    {
+      "id": "demo-web-quarto",
+      "ready": "h1",
+      "buildDir": "_site",
+      "siteJson": "site.json",
+      "panel": "behind.html"
+    },
+    {
+      "id": "demo-web-marimo",
+      "ready": "text=Sweet-to-sour ratio",
+      "buildDir": "dist",
+      "siteJson": "public/site.json",
+      "panel": "app.py",
+      "rewrites": [
+        { "file": "app.py", "pattern": "takes about \\d+ seconds", "template": "takes about {readyInt} seconds" },
+        { "file": "hub:src/pages/which.astro", "pattern": "downloads Python, about \\d+ seconds", "template": "downloads Python, about {readyInt} seconds" }
+      ]
+    },
+    {
+      "id": "demo-web-p5",
+      "ready": "canvas",
+      "buildDir": "dist",
+      "siteJson": "site.json",
+      "panel": "index.html"
+    },
+    {
+      "id": "demo-web-sim",
+      "ready": "canvas",
+      "buildDir": "dist",
+      "siteJson": "public/site.json",
+      "panel": "src/App.tsx"
+    },
+    {
+      "id": "demo-web-reference",
+      "ready": "h1",
+      "buildDir": "docs/_build/html",
+      "siteJson": "docs/_extra/site.json",
+      "panel": "docs/index.md"
+    },
+    {
+      "id": "demo-web-notebooks",
+      "ready": "article h1, h1",
+      "buildDir": "site",
+      "siteJson": "public/site.json",
+      "panel": "index.md",
+      "publishedSize": true,
+      "rewrites": [
+        { "file": "index.md", "pattern": "(Python lab is )[\\d.]+ MB", "template": "$1{published}" },
+        { "file": "public/site.json", "pattern": "(Python lab is )[\\d.]+ MB", "template": "$1{published}" },
+        { "file": "hub:src/data/sites.json", "pattern": "(Python lab is )[\\d.]+ MB", "template": "$1{published}" },
+        { "file": "hub:src/pages/which.astro", "pattern": "(published site is )[\\d.]+ MB", "template": "$1{published}" }
+      ]
+    }
+  ],
+  "lines": {
+    "include": ["md", "qmd", "py", "js", "ts", "tsx", "css", "scss", "html", "astro", "ipynb", "hpp", "h", "cpp", "rst"],
+    "excludeDirs": ["vendor", "node_modules", "dist", "_site", "_build", "site", "scripts", "public", ".github", ".quarto"],
+    "excludeFiles": ["tokens.css", "tokens.scss", "README.md", "LICENSE", "conf.py", "vite.config.ts", "package-lock.json"]
+  }
+}

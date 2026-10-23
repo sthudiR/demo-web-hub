@@ -1,0 +1,316 @@
+{
+  "measuredAt": "2026-10-23T07:46:40.145Z",
+  "runs": 5,
+  "ciRuns": 5,
+  "chrome": "155.0.8059.39",
+  "sites": {
+    "demo-web-quarto": {
+      "readySeconds": 0.44801480600000004,
+      "readyRuns": [
+        0.45,
+        0.37,
+        0.96,
+        0.91,
+        0.45
+      ],
+      "downloadBytes": 769312,
+      "downloadByHost": {
+        "sthudir.github.io": 670060,
+        "gc.zgo.at": 4407,
+        "fonts.googleapis.com": 925,
+        "": 996,
+        "cdn.jsdelivr.net": 92543,
+        "demo-web.goatcounter.com": 381
+      },
+      "lines": 334,
+      "linesByFile": {
+        "behind.html": 11,
+        "calendar.qmd": 17,
+        "index.qmd": 34,
+        "light.qmd": 40,
+        "showcase/embeds/p5-ripples.html": 44,
+        "showcase/embeds/three-knot.html": 49,
+        "showcase/index.qmd": 54,
+        "showcase/notebook.ipynb": 23,
+        "showcase/showcase.css": 8,
+        "showcase/slides.qmd": 43,
+        "watch.qmd": 11
+      },
+      "sourceCommit": "ea47233",
+      "sourceBranch": "chore/remeasure-numbers",
+      "buildRuns": [
+        {
+          "run": 39205899319,
+          "seconds": 33
+        },
+        {
+          "run": 39197118345,
+          "seconds": 26
+        },
+        {
+          "run": 39093262410,
+          "seconds": 27
+        },
+        {
+          "run": 39085811861,
+          "seconds": 24
+        },
+        {
+          "run": 39085358002,
+          "seconds": 31
+        }
+      ],
+      "buildSeconds": 27
+    },
+    "demo-web-marimo": {
+      "readySeconds": 6.106599288999998,
+      "readyRuns": [
+        7.98,
+        5.95,
+        5.56,
+        6.11,
+        8.05
+      ],
+      "downloadBytes": 2837919,
+      "downloadByHost": {
+        "sthudir.github.io": 2833130,
+        "gc.zgo.at": 4408,
+        "demo-web.goatcounter.com": 381
+      },
+      "lines": 133,
+      "linesByFile": {
+        "app.py": 133
+      },
+      "sourceCommit": "e652d7d",
+      "sourceBranch": "chore/remeasure-numbers",
+      "buildRuns": [
+        {
+          "run": 39206451505,
+          "seconds": 18
+        },
+        {
+          "run": 39197836452,
+          "seconds": 24
+        },
+        {
+          "run": 39093240739,
+          "seconds": 18
+        },
+        {
+          "run": 39085362686,
+          "seconds": 17
+        },
+        {
+          "run": 39080500279,
+          "seconds": 23
+        }
+      ],
+      "buildSeconds": 18
+    },
+    "demo-web-p5": {
+      "readySeconds": 0.9279989149999965,
+      "readyRuns": [
+        0.93,
+        0.93,
+        0.91,
+        1.02,
+        0.88
+      ],
+      "downloadBytes": 266137,
+      "downloadByHost": {
+        "sthudir.github.io": 261348,
+        "gc.zgo.at": 4408,
+        "demo-web.goatcounter.com": 381
+      },
+      "lines": 187,
+      "linesByFile": {
+        "index.html": 70,
+        "sketch.js": 90,
+        "style.css": 27
+      },
+      "sourceCommit": "6b82ae0",
+      "sourceBranch": "chore/remeasure-numbers",
+      "buildRuns": [
+        {
+          "run": 39206131374,
+          "seconds": 6
+        },
+        {
+          "run": 39197234760,
+          "seconds": 7
+        },
+        {
+          "run": 39093255423,
+          "seconds": 7
+        },
+        {
+          "run": 39085353133,
+          "seconds": 8
+        },
+        {
+          "run": 39080413288,
+          "seconds": 7
+        }
+      ],
+      "buildSeconds": 7
+    },
+    "demo-web-sim": {
+      "readySeconds": 0.3965454739999986,
+      "readyRuns": [
+        1.24,
+        0.92,
+        0.4,
+        0.37,
+        0.37
+      ],
+      "downloadBytes": 413866,
+      "downloadByHost": {
+        "sthudir.github.io": 405453,
+        "gc.zgo.at": 4408,
+        "": 3624,
+        "demo-web.goatcounter.com": 381
+      },
+      "lines": 483,
+      "linesByFile": {
+        "index.html": 16,
+        "src/App.tsx": 228,
+        "src/Scene.tsx": 97,
+        "src/Tex.tsx": 7,
+        "src/main.tsx": 13,
+        "src/styles.css": 51,
+        "src/tide.ts": 71
+      },
+      "sourceCommit": "c1a4186",
+      "sourceBranch": "chore/remeasure-numbers",
+      "buildRuns": [
+        {
+          "run": 39208083032,
+          "seconds": 18
+        },
+        {
+          "run": 39197577277,
+          "seconds": 19
+        },
+        {
+          "run": 39093276616,
+          "seconds": 17
+        },
+        {
+          "run": 39085368965,
+          "seconds": 22
+        },
+        {
+          "run": 39063448486,
+          "seconds": 21
+        }
+      ],
+      "buildSeconds": 19
+    },
+    "demo-web-reference": {
+      "readySeconds": 0.17397215600000346,
+      "readyRuns": [
+        0.19,
+        0.19,
+        0.17,
+        0.17,
+        0.17
+      ],
+      "downloadBytes": 41861,
+      "downloadByHost": {
+        "sthudir.github.io": 37063,
+        "": 0,
+        "gc.zgo.at": 4417,
+        "demo-web.goatcounter.com": 381
+      },
+      "lines": 190,
+      "linesByFile": {
+        "docs/_static/custom.css": 16,
+        "docs/api.md": 7,
+        "docs/glossary.md": 15,
+        "docs/index.md": 53,
+        "docs/methods.md": 30,
+        "docs/origins.md": 20,
+        "docs/ratios.md": 12,
+        "include/coffee/brew.hpp": 37
+      },
+      "sourceCommit": "f39c734",
+      "sourceBranch": "chore/remeasure-numbers",
+      "buildRuns": [
+        {
+          "run": 39205994426,
+          "seconds": 33
+        },
+        {
+          "run": 39197256303,
+          "seconds": 38
+        },
+        {
+          "run": 39093559396,
+          "seconds": 32
+        },
+        {
+          "run": 39093323644,
+          "seconds": 31
+        },
+        {
+          "run": 39085379544,
+          "seconds": 28
+        }
+      ],
+      "buildSeconds": 32
+    },
+    "demo-web-notebooks": {
+      "readySeconds": 0.2873842969999969,
+      "readyRuns": [
+        0.41,
+        0.29,
+        0.28,
+        0.28,
+        0.38
+      ],
+      "downloadBytes": 1883787,
+      "downloadByHost": {
+        "sthudir.github.io": 1867242,
+        "cdnjs.cloudflare.com": 6549,
+        "cdn.jsdelivr.net": 5207,
+        "gc.zgo.at": 4408,
+        "demo-web.goatcounter.com": 381
+      },
+      "lines": 144,
+      "linesByFile": {
+        "content/hydration.md": 31,
+        "content/lab.md": 17,
+        "content/timing.md": 24,
+        "index.md": 36,
+        "notebooks/fermentation.ipynb": 14,
+        "notebooks/hydration.ipynb": 22
+      },
+      "sourceCommit": "e8becd5",
+      "sourceBranch": "chore/remeasure-numbers",
+      "buildRuns": [
+        {
+          "run": 39206240811,
+          "seconds": 38
+        },
+        {
+          "run": 39196899775,
+          "seconds": 41
+        },
+        {
+          "run": 39093393069,
+          "seconds": 44
+        },
+        {
+          "run": 39093247515,
+          "seconds": 46
+        },
+        {
+          "run": 39085373468,
+          "seconds": 48
+        }
+      ],
+      "buildSeconds": 44,
+      "publishedBytes": 81796555
+    }
+  }
+}
